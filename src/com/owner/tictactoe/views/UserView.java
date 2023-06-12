@@ -62,47 +62,47 @@ public class UserView {
 			startGame = "X";
 		}
 	}
-	private void winningGame() {
+	private void winningGame(String player1, String player2) {
 		
 		// for Player X
 		
 		if(b1==1 && b2==1 && b3==1) {
-			JOptionPane.showMessageDialog(frame, "Player X Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(frame, player1+" Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
 			xCount1++;
 			xCount.setText(String.valueOf(xCount1));
 		}
 		else if(b4==1 && b5==1 && b6==1) {
-			JOptionPane.showMessageDialog(frame, "Player X Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(frame, player1+" Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
 			xCount1++;
 			xCount.setText(String.valueOf(xCount1));
 		}
 		else if(b7==1 && b8==1 && b9==1) {
-			JOptionPane.showMessageDialog(frame, "Player X Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(frame, player1+" Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
 			xCount1++;
 			xCount.setText(String.valueOf(xCount1));
 		}
 		else if(b1==1 && b4==1 && b7==1) {
-			JOptionPane.showMessageDialog(frame, "Player X Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(frame, player1+" Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
 			xCount1++;
 			xCount.setText(String.valueOf(xCount1));
 		}
 		else if(b2==1 && b5==1 && b8==1) {
-			JOptionPane.showMessageDialog(frame, "Player X Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(frame, player1+" Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
 			xCount1++;
 			xCount.setText(String.valueOf(xCount1));
 		}
 		else if(b3==1 && b6==1 && b9==1) {
-			JOptionPane.showMessageDialog(frame, "Player X Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(frame, player1+" Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
 			xCount1++;
 			xCount.setText(String.valueOf(xCount1));
 		}
 		else if(b1==1 && b5==1 && b9==1) {
-			JOptionPane.showMessageDialog(frame, "Player X Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(frame, player1+" Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
 			xCount1++;
 			xCount.setText(String.valueOf(xCount1));
 		}
 		else if(b3==1 && b5==1 && b7==1) {
-			JOptionPane.showMessageDialog(frame, "Player X Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(frame, player1+" Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
 			xCount1++;
 			xCount.setText(String.valueOf(xCount1));
 		}
@@ -110,42 +110,42 @@ public class UserView {
 		// for Player O
 		
 		else if(b1==0 && b2==0 && b3==0) {
-					JOptionPane.showMessageDialog(frame, "Player O Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(frame, player2+" Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
 					oCount1++;
 					oCount.setText(String.valueOf(oCount1));
 				}
 		else if(b4==0 && b5==0 && b6==0) {
-					JOptionPane.showMessageDialog(frame, "Player O Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(frame, player2+" Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
 					oCount1++;
 					oCount.setText(String.valueOf(oCount1));
 				}
 		else if(b7==0 && b8==0 && b9==0) {
-					JOptionPane.showMessageDialog(frame, "Player O Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(frame, player2+" Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
 					oCount1++;
 					oCount.setText(String.valueOf(oCount1));
 				}
 		else if(b1==0 && b4==0 && b7==0) {
-					JOptionPane.showMessageDialog(frame, "Player O Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(frame, player2+" Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
 					oCount1++;
 					oCount.setText(String.valueOf(oCount1));
 				}
 		else if(b2==0 && b5==0 && b8==0) {
-					JOptionPane.showMessageDialog(frame, "Player O Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(frame, player2+" Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
 					oCount1++;
 					oCount.setText(String.valueOf(oCount1));
 				}
 		else if(b3==0 && b6==0 && b9==0) {
-					JOptionPane.showMessageDialog(frame, "Player O Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(frame, player2+" Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
 					oCount1++;
 					oCount.setText(String.valueOf(oCount1));
 				}
 		else if(b1==0 && b5==0 && b9==0) {
-					JOptionPane.showMessageDialog(frame, "Player O Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(frame, player2+" Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
 					oCount1++;
 					oCount.setText(String.valueOf(oCount1));
 				}
 		else if(b3==0 && b5==0 && b7==0) {
-					JOptionPane.showMessageDialog(frame, "Player O Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(frame, player2+" Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
 					oCount1++;
 					oCount.setText(String.valueOf(oCount1));
 				}
@@ -191,7 +191,7 @@ public class UserView {
 					i++;
 				}
 				choosePlayer();
-				winningGame();
+				winningGame(player1, player2);
 			}
 		});
 		btn1.setBackground(new Color(125, 179, 255));
@@ -218,7 +218,7 @@ public class UserView {
 					i++;
 				}
 				choosePlayer();
-				winningGame();
+				winningGame(player1, player2);
 			}
 		});
 		btn2.setFont(new Font("Lucida Grande", Font.BOLD, 80));
@@ -244,7 +244,7 @@ public class UserView {
 					i++;
 				}
 				choosePlayer();
-				winningGame();
+				winningGame(player1, player2);
 			}
 		});
 		btn3.setFont(new Font("Lucida Grande", Font.BOLD, 80));
@@ -292,7 +292,7 @@ public class UserView {
 					i++;
 				}
 				choosePlayer();
-				winningGame();
+				winningGame(player1, player2);
 			}
 		});
 		btn4.setFont(new Font("Lucida Grande", Font.BOLD, 80));
@@ -318,7 +318,7 @@ public class UserView {
 					i++;
 				}
 				choosePlayer();
-				winningGame();
+				winningGame(player1, player2);
 			}
 		});
 		btn5.setFont(new Font("Lucida Grande", Font.BOLD, 80));
@@ -344,7 +344,7 @@ public class UserView {
 					i++;
 				}
 				choosePlayer();
-				winningGame();
+				winningGame(player1, player2);
 			}
 		});
 		btn6.setFont(new Font("Lucida Grande", Font.BOLD, 80));
@@ -392,7 +392,7 @@ public class UserView {
 					i++;
 				}
 				choosePlayer();
-				winningGame();
+				winningGame(player1, player2);
 			}
 		});
 		btn7.setFont(new Font("Lucida Grande", Font.BOLD, 80));
@@ -418,7 +418,7 @@ public class UserView {
 					i++;
 				}
 				choosePlayer();
-				winningGame();
+				winningGame(player1, player2);
 			}
 		});
 		btn8.setFont(new Font("Lucida Grande", Font.BOLD, 80));
@@ -444,7 +444,7 @@ public class UserView {
 					i++;
 				}
 				choosePlayer();
-				winningGame();
+				winningGame(player1, player2);
 			}
 		});
 		btn9.setFont(new Font("Lucida Grande", Font.BOLD, 80));

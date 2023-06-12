@@ -10,6 +10,8 @@ import java.awt.Color;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
+import java.awt.Cursor;
 
 public class Dashboard {
 
@@ -57,37 +59,40 @@ public class Dashboard {
 		frame.getContentPane().add(lblNewLabel);
 		
 		textField1 = new JTextField();
+		textField1.setHorizontalAlignment(SwingConstants.CENTER);
 		textField1.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
 		textField1.setBorder(new LineBorder(new Color(0, 0, 0)));
-		textField1.setBounds(516, 68, 232, 35);
+		textField1.setBounds(526, 68, 213, 32);
 		frame.getContentPane().add(textField1);
 		textField1.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("Player 1 Name : ");
-		lblNewLabel_1.setFont(new Font("Lucida Grande", Font.BOLD, 16));
-		lblNewLabel_1.setBounds(516, 33, 182, 35);
+		lblNewLabel_1.setFont(new Font("Lucida Grande", Font.BOLD, 18));
+		lblNewLabel_1.setBounds(526, 32, 182, 35);
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Player 2 Name : ");
-		lblNewLabel_2.setFont(new Font("Lucida Grande", Font.BOLD, 16));
-		lblNewLabel_2.setBounds(516, 127, 184, 35);
+		lblNewLabel_2.setFont(new Font("Lucida Grande", Font.BOLD, 18));
+		lblNewLabel_2.setBounds(526, 127, 184, 35);
 		frame.getContentPane().add(lblNewLabel_2);
 		
 		textField2 = new JTextField();
+		textField2.setHorizontalAlignment(SwingConstants.CENTER);
 		textField2.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
 		textField2.setBorder(new LineBorder(new Color(0, 0, 0)));
 		textField2.setColumns(10);
-		textField2.setBounds(516, 163, 232, 35);
+		textField2.setBounds(526, 163, 213, 32);
 		frame.getContentPane().add(textField2);
 		
 		JButton btnNewButton = new JButton("Start Game");
+		btnNewButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				gameStart();
 			}
 		});
-		btnNewButton.setFont(new Font("Lucida Grande", Font.BOLD, 18));
-		btnNewButton.setBounds(552, 237, 169, 35);
+		btnNewButton.setFont(new Font("Lucida Grande", Font.BOLD, 16));
+		btnNewButton.setBounds(557, 236, 141, 35);
 		frame.getContentPane().add(btnNewButton);
 	}
 }
