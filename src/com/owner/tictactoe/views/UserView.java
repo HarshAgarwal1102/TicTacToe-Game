@@ -15,6 +15,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
 
 public class UserView {
 
@@ -34,6 +37,7 @@ public class UserView {
 	private int b7 = 10;
 	private int b8 = 10;
 	private int b9 = 10;
+	
 	private int i =0;
 
 	/**
@@ -190,7 +194,9 @@ public class UserView {
 					b1 = 0;
 					i++;
 				}
+				
 				choosePlayer();
+		
 				winningGame(player1, player2);
 			}
 		});
@@ -218,6 +224,7 @@ public class UserView {
 					i++;
 				}
 				choosePlayer();
+				
 				winningGame(player1, player2);
 			}
 		});
@@ -244,6 +251,7 @@ public class UserView {
 					i++;
 				}
 				choosePlayer();
+				
 				winningGame(player1, player2);
 			}
 		});
@@ -458,6 +466,7 @@ public class UserView {
 		JButton btnReset = new JButton("Reset");
 		btnReset.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+			
 				btn1.setText("");
 				btn2.setText("");
 				btn3.setText("");
@@ -467,6 +476,7 @@ public class UserView {
 				btn7.setText("");
 				btn8.setText("");
 				btn9.setText("");
+				
 				b1 = 10;
 				b2 = 10;
 				b3 = 10;
@@ -499,6 +509,25 @@ public class UserView {
 		});
 		btnExit.setFont(new Font("Lucida Grande", Font.BOLD, 25));
 		panel_15.add(btnExit, BorderLayout.CENTER);
+		
+		JMenuBar menuBar = new JMenuBar();
+		frmTictactoegame.setJMenuBar(menuBar);
+		
+		JMenu nameMenu = new JMenu("Name");
+		menuBar.add(nameMenu);
+		
+		JMenuItem chaneNameMenu = new JMenuItem("Change Players Name");
+		nameMenu.add(chaneNameMenu);
+		chaneNameMenu.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				frmTictactoegame.setVisible(false);
+				frmTictactoegame.dispose();
+				new Dashboard();
+			}
+		});
 		
 		frmTictactoegame.setVisible(true);
 	}
