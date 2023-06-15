@@ -26,7 +26,7 @@ public class Dashboard {
 	 */
 	public static void main(String[] args) {
 		
-			Dashboard window = new Dashboard();
+			new Dashboard();
 	}
 
 	/**

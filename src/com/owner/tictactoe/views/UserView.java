@@ -264,7 +264,7 @@ public class UserView {
 		panel_4.setLayout(new BorderLayout(0, 0));
 		
 		JLabel lblNewLabel = new JLabel(player1);
-		lblNewLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
+		lblNewLabel.setFont(new Font("Trattatello", Font.PLAIN, 25));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_4.add(lblNewLabel, BorderLayout.CENTER);
 		
@@ -364,7 +364,7 @@ public class UserView {
 		panel_9.setLayout(new BorderLayout(0, 0));
 		
 		JLabel lblNewLabel_1 = new JLabel(player2);
-		lblNewLabel_1.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
+		lblNewLabel_1.setFont(new Font("Trattatello", Font.PLAIN, 23));
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_9.add(lblNewLabel_1, BorderLayout.CENTER);
 		
