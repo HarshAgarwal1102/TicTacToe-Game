@@ -6,18 +6,19 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
 
 public class UserView {
 
@@ -30,24 +31,8 @@ public class UserView {
 	private int oCount1 = 0;
 	private int currCounto = 0;
 	private String startGame = "X";
-	private int b1 = 10;
-	private int b2 = 10;
-	private int b3 = 10;
-	private int b4 = 10;
-	private int b5 = 10;
-	private int b6 = 10;
-	private int b7 = 10;
-	private int b8 = 10;
-	private int b9 = 10;
-	private boolean clicked1 = false;
-	private boolean clicked2 = false;
-	private boolean clicked3 = false;
-	private boolean clicked4 = false;
-	private boolean clicked5 = false;
-	private boolean clicked6 = false;
-	private boolean clicked7 = false;
-	private boolean clicked8 = false;
-	private boolean clicked9 = false;
+	private int b[] = new int[9];
+	private boolean[] clicked = new boolean[9];
 	
 	private int i =0;
 
@@ -67,187 +52,72 @@ public class UserView {
 	/**
 	 * Initialize the contents of the frame.
 	 */
+	public void game(int m, JButton btn, String player1, String player2) {
+		
+			btn.setText(startGame);
+			if(startGame.equalsIgnoreCase("X")) {
+				btn.setForeground(Color.RED);
+				b[m] = 1;
+				System.out.println("b["+m+"] = "+b[m]);
+			}
+			else {
+				btn.setForeground(Color.blue);
+				b[m] = 2;
+				System.out.println("b["+m+"] = "+b[m]);
+			}
+			choosePlayer();
+			i++;
+			winningGame(player1, player2);
+	}
 	
+	private void checko(String player2) {
+		if(currCounto == oCount1) {
+			oCount1++;
+			oCount.setText(String.valueOf(oCount1));
+			JOptionPane.showMessageDialog(frame, player2+" Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
+			Arrays.fill(clicked, true);
+			currCounto = oCount1;
+		}
+	}
+	private void checkx(String player1) {
+		if(currCountx == xCount1) {
+			xCount1++;
+			xCount.setText(String.valueOf(xCount1));
+			JOptionPane.showMessageDialog(frame, player1+" Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
+			Arrays.fill(clicked, true);
+			currCountx = xCount1;
+		}
+	}
 	private void choosePlayer() {
 		if(startGame.equalsIgnoreCase("X")){
 			startGame = "O";
-			
 		}
 		else {
 			startGame = "X";
 		}
 	}
 	
-	public void click() {
-		 clicked1 = true;
-		 clicked2 = true;
-		  clicked3 = true;
-		  clicked4 = true;
-		  clicked5 = true;
-		  clicked6 = true;
-		  clicked7 = true;
-		  clicked8 = true;
-		  clicked9 = true;
-		
-	}
-	
 	private void winningGame(String player1, String player2) {
 		
 		// for Player X
 		
-		if(b1==1 && b2==1 && b3==1) {
-			if(currCountx == xCount1) {
-				xCount1++;
-				xCount.setText(String.valueOf(xCount1));
-				JOptionPane.showMessageDialog(frame, player1+" Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
-				click();
-				currCountx = xCount1;
-			}
-		}
-		else if(b4==1 && b5==1 && b6==1) {
-			if(currCountx == xCount1) {
-				xCount1++;
-				xCount.setText(String.valueOf(xCount1));
-				JOptionPane.showMessageDialog(frame, player1+" Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
-				click();
-				currCountx = xCount1;
-			}
-		}
-		else if(b7==1 && b8==1 && b9==1) {
-			if(currCountx == xCount1) {
-				xCount1++;
-				xCount.setText(String.valueOf(xCount1));
-				JOptionPane.showMessageDialog(frame, player1+" Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
-				click();
-				currCountx = xCount1;
-			}
-		}
-		else if(b1==1 && b4==1 && b7==1) {
-			if(currCountx == xCount1) {
-				xCount1++;
-				xCount.setText(String.valueOf(xCount1));
-				JOptionPane.showMessageDialog(frame, player1+" Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
-				click();
-				currCountx = xCount1;
-			}
-		}
-		else if(b2==1 && b5==1 && b8==1) {
-			if(currCountx == xCount1) {
-				xCount1++;
-				xCount.setText(String.valueOf(xCount1));
-				JOptionPane.showMessageDialog(frame, player1+" Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
-				click();
-				currCountx = xCount1;
-			}
-		}
-		else if(b3==1 && b6==1 && b9==1) {
-			if(currCountx == xCount1) {
-				xCount1++;
-				xCount.setText(String.valueOf(xCount1));
-				JOptionPane.showMessageDialog(frame, player1+" Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
-				click();
-				currCountx = xCount1;
-			}
-		}
-		else if(b1==1 && b5==1 && b9==1) {
-			if(currCountx == xCount1) {
-				xCount1++;
-				xCount.setText(String.valueOf(xCount1));
-				JOptionPane.showMessageDialog(frame, player1+" Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
-				click();
-				currCountx = xCount1;
-			}
-		}
-		else if(b3==1 && b5==1 && b7==1) {
-			if(currCountx == xCount1) {
-				xCount1++;
-				xCount.setText(String.valueOf(xCount1));
-				JOptionPane.showMessageDialog(frame, player1+" Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
-				click();
-				currCountx = xCount1;
-			}
+		if (b[0] == 1 && b[1] == 1 && b[2] == 1 || b[3] == 1 && b[4] == 1 && b[5] == 1 || b[6] == 1 && b[7] == 1 && b[8] == 1 ||
+                b[0] == 1 && b[3] == 1 && b[6] == 1 || b[1] == 1 && b[4] == 1 && b[7] == 1 || b[2] == 1 && b[5] == 1 && b[8] == 1 ||
+                b[0] == 1 && b[4] == 1 && b[8] == 1 || b[2] == 1 && b[4] == 1 && b[6] == 1) {
+			checkx(player1);
 		}
 		
 		// for Player O
 		
-		else if(b1==0 && b2==0 && b3==0) {
-			if(currCounto == oCount1) {
-				oCount1++;
-				oCount.setText(String.valueOf(oCount1));
-				JOptionPane.showMessageDialog(frame, player2+" Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
-				click();
-				currCounto = oCount1;
-			}
-				}
-		else if(b4==0 && b5==0 && b6==0) {
-			if(currCounto == oCount1) {
-				oCount1++;
-				oCount.setText(String.valueOf(oCount1));
-				JOptionPane.showMessageDialog(frame, player2+" Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
-				click();
-				currCounto = oCount1;
-			}
-				}
-		else if(b7==0 && b8==0 && b9==0) {
-			if(currCounto == oCount1) {
-				oCount1++;
-				oCount.setText(String.valueOf(oCount1));
-				JOptionPane.showMessageDialog(frame, player2+" Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
-				click();
-				currCounto = oCount1;
-			}
-				}
-		else if(b1==0 && b4==0 && b7==0) {
-			if(currCounto == oCount1) {
-				oCount1++;
-				oCount.setText(String.valueOf(oCount1));
-				JOptionPane.showMessageDialog(frame, player2+" Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
-				click();
-				currCounto = oCount1;
-			}
-				}
-		else if(b2==0 && b5==0 && b8==0) {
-			if(currCounto == oCount1) {
-				oCount1++;
-				oCount.setText(String.valueOf(oCount1));
-				JOptionPane.showMessageDialog(frame, player2+" Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
-				click();
-				currCounto = oCount1;
-			}
-				}
-		else if(b3==0 && b6==0 && b9==0) {
-			if(currCounto == oCount1) {
-				oCount1++;
-				oCount.setText(String.valueOf(oCount1));
-				JOptionPane.showMessageDialog(frame, player2+" Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
-				click();
-				currCounto = oCount1;
-			}
-				}
-		else if(b1==0 && b5==0 && b9==0) {
-			if(currCounto == oCount1) {
-				oCount1++;
-				oCount.setText(String.valueOf(oCount1));
-				JOptionPane.showMessageDialog(frame, player2+" Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
-				click();
-				currCounto = oCount1;
-			}
-				}
-		else if(b3==0 && b5==0 && b7==0) {
-			if(currCounto == oCount1) {
-				oCount1++;
-				oCount.setText(String.valueOf(oCount1));
-				JOptionPane.showMessageDialog(frame, player2+" Wins","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
-				click();
-				currCounto = oCount1;
-			}
-				}
-				
+		if (b[0] == 2 && b[1] == 2 && b[2] == 2 || b[3] == 2 && b[4] == 2 && b[5] == 2 || b[6] == 2 && b[7] == 2 && b[8] == 2 ||
+                b[0] == 2 && b[3] == 2 && b[6] == 2 || b[1] == 2 && b[4] == 2 && b[7] == 2 || b[2] == 2 && b[5] == 2 && b[8] == 2 ||
+                b[0] == 2 && b[4] == 2 && b[8] == 2 || b[2] == 2 && b[4] == 2 && b[6] == 2) {
+			checko(player2);
+		}
+			
 		else if(i==9) {
-					JOptionPane.showMessageDialog(frame, "Match Draw!!","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
-					
-				}
-		
+			JOptionPane.showMessageDialog(frame, "Match Draw!!","Tic Tac Toe", JOptionPane.INFORMATION_MESSAGE);
+		}
 	}
 	
 	
@@ -273,25 +143,10 @@ public class UserView {
 		JButton btn1 = new JButton("");
 		btn1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(!clicked1) {
-				btn1.setText(startGame);
-				if(startGame.equalsIgnoreCase("X")) {
-					btn1.setForeground(Color.RED);
-					b1 = 1;
-					//i++;
+				if(!clicked[0]) {
+					game(0, btn1, player1, player2);
+					clicked[0] = true;
 				}
-				else {
-					btn1.setForeground(Color.blue);
-					b1 = 0;
-					//i++;
-				}
-				
-					choosePlayer();
-					i++;
-					clicked1 = true;
-					winningGame(player1, player2);
-				}
-		
 				
 			}
 		});
@@ -307,23 +162,9 @@ public class UserView {
 		JButton btn2 = new JButton("");
 		btn2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(!clicked2) {
-				btn2.setText(startGame);
-				if(startGame.equalsIgnoreCase("X")) {
-					btn2.setForeground(Color.RED);
-					b2 = 1;
-				//	i++;
-				}
-				else {
-					btn2.setForeground(Color.blue);
-					b2 = 0;
-				//	i++;
-				}
-				
-					choosePlayer();
-					i++;
-					clicked2 = true;
-					winningGame(player1, player2);
+				if(!clicked[1]) {
+					game(1, btn2, player1, player2);
+					clicked[1] = true;
 				}
 				
 			}
@@ -339,24 +180,9 @@ public class UserView {
 		JButton btn3 = new JButton("");
 		btn3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(!clicked3) {
-				btn3.setText(startGame);
-				if(startGame.equalsIgnoreCase("X")) {
-					btn3.setForeground(Color.RED);
-					b3 =1;
-				//	i++;
-				}
-				else {
-					btn3.setForeground(Color.blue);
-					b3 =0;
-				//	i++;
-				}
-				
-					choosePlayer();
-					i++;
-					clicked3 = true;
-					
-					winningGame(player1, player2);
+				if(!clicked[2]) {
+					game(2, btn3, player1, player2);
+					clicked[2] = true;
 				}
 				
 			}
@@ -394,23 +220,9 @@ public class UserView {
 		JButton btn4 = new JButton("");
 		btn4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(!clicked4) {
-				btn4.setText(startGame);
-				if(startGame.equalsIgnoreCase("X")) {
-					btn4.setForeground(Color.RED);
-					b4 = 1;
-					//i++;
-				}
-				else {
-					btn4.setForeground(Color.blue);
-					b4 = 0;
-				//	i++;
-				}
-				
-					choosePlayer();
-					i++;
-					clicked4 = true;
-					winningGame(player1, player2);
+				if(!clicked[3]) {
+					game(3, btn4, player1, player2);
+					clicked[3] = true;
 				}
 				
 			}
@@ -426,23 +238,9 @@ public class UserView {
 		JButton btn5 = new JButton("");
 		btn5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(!clicked5) {
-				btn5.setText(startGame);
-				if(startGame.equalsIgnoreCase("X")) {
-					btn5.setForeground(Color.RED);
-					b5 = 1;
-					//i++;
-				}
-				else {
-					btn5.setForeground(Color.blue);
-					b5 = 0;
-					//i++;
-				}
-				
-					choosePlayer();
-					i++;
-					clicked5 = true;
-					winningGame(player1, player2);
+				if(!clicked[4]) {
+					game(4, btn5, player1, player2);
+					clicked[4] = true;
 				}
 				
 			}
@@ -458,23 +256,9 @@ public class UserView {
 		JButton btn6 = new JButton("");
 		btn6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(!clicked6) {
-				btn6.setText(startGame);
-				if(startGame.equalsIgnoreCase("X")) {
-					btn6.setForeground(Color.RED);
-					b6 = 1;
-					//i++;
-				}
-				else {
-					btn6.setForeground(Color.blue);
-					b6 = 0;
-					//i++;
-				}
-				
-					choosePlayer();
-					i++;
-					clicked6 = true;
-					winningGame(player1, player2);
+				if(!clicked[5]) {
+					game(5, btn6, player1, player2);
+					clicked[5] = true;
 				}
 				
 			}
@@ -512,23 +296,9 @@ public class UserView {
 		JButton btn7 = new JButton("");
 		btn7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(!clicked7) {
-				btn7.setText(startGame);
-				if(startGame.equalsIgnoreCase("X")) {
-					btn7.setForeground(Color.RED);
-					b7 = 1;
-					//i++;
-				}
-				else {
-					btn7.setForeground(Color.blue);
-					b7 = 0;
-					//i++;
-				}
-				
-					choosePlayer();
-					i++;
-					clicked7 = true;
-					winningGame(player1, player2);
+				if(!clicked[6]) {
+					game(6, btn7, player1, player2);
+					clicked[6] = true;
 				}
 			
 			}
@@ -544,23 +314,9 @@ public class UserView {
 		JButton btn8 = new JButton("");
 		btn8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(!clicked8) {
-				btn8.setText(startGame);
-				if(startGame.equalsIgnoreCase("X")) {
-					btn8.setForeground(Color.RED);
-					b8 = 1;
-					//i++;
-				}
-				else {
-					btn8.setForeground(Color.blue);
-					b8 = 0;
-					//i++;
-				}
-				
-					choosePlayer();
-					i++;
-					clicked8 = true;
-					winningGame(player1, player2);
+				if(!clicked[7]) {
+					game(7, btn8, player1, player2);
+					clicked[7] = true;
 				}
 				
 			}
@@ -576,23 +332,9 @@ public class UserView {
 		JButton btn9 = new JButton("");
 		btn9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(!clicked9) {
-				btn9.setText(startGame);
-				if(startGame.equalsIgnoreCase("X")) {
-					btn9.setForeground(Color.RED);
-					b9 = 1;
-					//i++;
-				}
-				else {
-					btn9.setForeground(Color.blue);
-					b9 = 0;
-					//i++;
-				}
-				
-					choosePlayer();
-					i++;
-					clicked9 = true;
-					winningGame(player1, player2);
+				if(!clicked[8]) {
+					game(8, btn9, player1, player2);
+					clicked[8] = true;
 				}
 				
 			}
@@ -621,26 +363,11 @@ public class UserView {
 				btn8.setText("");
 				btn9.setText("");
 				
-				b1 = 10;
-				b2 = 10;
-				b3 = 10;
-				b4 = 10;
-				b5 = 10;
-				b6 = 10;
-				b7 = 10;
-				b8 = 10;
-				b9 = 10;
+				Arrays.fill(b, 0);
+				
 				i=0;
 				
-				 clicked1 = false;
-				 clicked2 = false;
-				 clicked3 = false;
-				 clicked4 = false;
-				 clicked5 = false;
-				 clicked6 = false;
-			     clicked7 = false;
-				 clicked8 = false;
-				 clicked9 = false;
+				Arrays.fill(clicked, false);
 			}
 		});
 		btnReset.setFont(new Font("Lucida Grande", Font.BOLD, 25));
@@ -682,8 +409,7 @@ public class UserView {
 				new Dashboard();
 			}
 		});
-		
+	
 		frmTictactoegame.setVisible(true);
 	}
-
 }
