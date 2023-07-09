@@ -1,5 +1,5 @@
 # TicTacToe-Game
-Read More : https://medium.com/@harshagarwal2225/1a1351c327fd
+
 ![TICTAC](https://github.com/king4404/TicTacToe-Game/assets/117922914/70bca25f-a785-42db-841d-19820138c95e)
 
 # Java Swing GUI project for a Tic Tac Toe game with a detailed description of the project :
@@ -10,6 +10,7 @@ Read More : https://medium.com/@harshagarwal2225/1a1351c327fd
 - There will be two JLabels for displaying instructions or messages to the players.
 - Two JTextFields will be provided for entering the names of Player 1 and Player 2.
 - A “Start Game” button will initiate the game and transition to the main game window.
+<img width="768" alt="Screenshot 2023-07-09 at 9 40 20 PM" src="https://github.com/king4404/TicTacToe-Game/assets/117922914/a58b2a98-b542-4570-9684-eac16d95538e">
 
 # GUI Design:
 - The GUI will be created using Java Swing components such as JFrame, JPanel, JButton, JLabel, JTextField, etc.
@@ -18,6 +19,7 @@ Read More : https://medium.com/@harshagarwal2225/1a1351c327fd
 - There will be two JTextField components for entering the names of Player 1 and Player 2.
 - There will be two additional JTextFields for displaying each player's score.
 - Two buttons will be provided: “Reset” to clear the board and start a new game, and “Exit” to close the application.
+<img width="599" alt="Screenshot 2023-07-09 at 9 48 32 PM" src="https://github.com/king4404/TicTacToe-Game/assets/117922914/10359482-3606-42f3-805d-802f12418336">
 
 # Game Logic :
 - The game logic will handle the state of the game, and the player moves, and determine the winner.
@@ -27,7 +29,8 @@ Read More : https://medium.com/@harshagarwal2225/1a1351c327fd
 - After each move, the game logic will check for a winning condition or a draw.
 - The game logic will declare the winner if a winning condition is met (e.g., three symbols in a row, column, or diagonal).
 - The game logic will also keep track of each player's score.
-  
+<img width="598" alt="Screenshot 2023-07-09 at 9 51 54 PM" src="https://github.com/king4404/TicTacToe-Game/assets/117922914/eb253a0c-9b8c-4523-bef2-02461ec028e0">
+
 # Event Handling:
 - Event listeners will be attached to each button to handle player moves.
 - When a button is clicked, the event handler will check if the button is empty and it’s the player’s turn.
