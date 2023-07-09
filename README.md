@@ -19,6 +19,7 @@
 - There will be two JTextField components for entering the names of Player 1 and Player 2.
 - There will be two additional JTextFields for displaying each player's score.
 - Two buttons will be provided: “Reset” to clear the board and start a new game, and “Exit” to close the application.
+
 &nbsp;<img width="599" alt="Screenshot 2023-07-09 at 9 48 32 PM" src="https://github.com/king4404/TicTacToe-Game/assets/117922914/10359482-3606-42f3-805d-802f12418336">
 
 # Game Logic :
